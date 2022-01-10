@@ -30,6 +30,7 @@ char op, last_op, dis, buffer [40];</br>
 float ans;</br></br>
 In this section, the global variables defined in file C that are required in this function are rewritten. (This is because the function is in a header file)</br></br>
 Within the function, we have defined a series of local variables, each of which we will describe below:</br></br>
+
 1. key: The value of the key pressed is inside this variable.
 2. k: The value inside the key is converted to an integer at 0f and placed in k.
 3. count and count2: Used to count the number of digits entered.
@@ -38,8 +39,8 @@ Within the function, we have defined a series of local variables, each of which 
 6. neg: To understand that the left-key is pressed, it means that the input number is negative, and in the final step, the variable n is negative. picpars
 7. ashar: This variable is also used to understand the user wants to enter a decimal number, which we explain below.
 8. n, n2: Also used to store the final integer. (n2 temporary)
-9. dis: By unifying this variable, we have given permission to delete the lcd so that after pressing the first lcd key, the result of the last calculation will be displayed in the second line.
-</br></br>
+9. dis: By unifying this variable, we have given permission to delete the lcd so that after pressing the first lcd key, the result of the last calculation will be displayed in the second line.</br></br>
+
 From the if (op) command lcd_putchar (op); Used to get the second number, if we have an op, that op will be displayed on the lcd. In the following, we have a label that this label is used only to get the decimal part of the desired number. The variables required to get the number become zero and we enter the infinite conditional loop.</br></br>
 The condition of this loop is a problem with op, that is, as long as we have op = 0, we stay in the loop, and as soon as one of the operation keys is pressed, op opari will be a value, and the condition of this loop will disappear and lead to exit. It will. First, the keypad function will be called and the value of the pressed key will be measured. The count is copied to count2 for the final steps. If the numbers are not 0 to 9, one of the operation keys is certainly pressed, so this operation is placed in the corresponding variable op.</br></br>
 If the + - key is pressed, we neg = 1 and zero op so that the condition of the loop is still valid and we get the number and also the - sign is displayed. The same is true for the decimal key.</br></br>
